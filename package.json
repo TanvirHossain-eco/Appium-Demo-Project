@@ -7,10 +7,12 @@
     "@wdio/mocha-framework": "^9.5.0",
     "@wdio/spec-reporter": "^9.5.0",
     "appium": "^2.15.0",
-    "appium-uiautomator2-driver": "^3.9.8",
-    "appium-xcuitest-driver": "^7.35.1"
+    "appium-xcuitest-driver": "^4.27.0"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "webdriverio": "^9.5.7"
   }
 }

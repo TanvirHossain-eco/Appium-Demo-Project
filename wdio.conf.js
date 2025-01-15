@@ -78,11 +78,13 @@ exports.config = {
     // },
     {
         // capabilities for local Appium App tests on an iOS Emulator
-        'appium:platformName': 'iOS',
+        platformName: 'iOS',
         'appium:platformVersion': '15.5',
         'appium:deviceName': 'iPhone 11 Pro',
         'appium:automationName': 'XCUITest',
-        "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app"),
+        "appium:app": path.join(process.cwd(), "app/ios/UIKitCatalog.app"),
+        "appium:noReset": true,
+        "appium:fullReset": false,
         // "appium:autoGrantPermissions": true
     }
 ],
