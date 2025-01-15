@@ -70,7 +70,6 @@ exports.config = {
         'appium:platformVersion': '15.0',
         'appium:deviceName': 'Pixel 4',
         'appium:automationName': 'UIAutomator2',
-        // "appium:app": path.join(process.cwd(), "app/android/ApiDemos-debug.apk"),
         "appium:app": path.join(process.cwd(), "app/android/ColorNote+Notepad.apk"),
         "appium:autoGrantPermissions": true
     }],
