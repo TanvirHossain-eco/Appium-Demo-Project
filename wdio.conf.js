@@ -29,6 +29,7 @@ exports.config = {
         // './test/specs/*.js',
         // './test/specs/android/*.js',
         './test/specs/ios/*.js',
+        './test/specs/ios*.js',
     ],
     // Patterns to exclude.
     exclude: [
