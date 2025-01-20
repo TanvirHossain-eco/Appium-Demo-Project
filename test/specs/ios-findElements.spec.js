@@ -51,5 +51,63 @@ describe('iOS Elements Tests', () => {
         await expect(await driver.getAlertText()).toContain("A Short Title Is Best");
 
     });
+    // FInd Element by class chain
+    it('Find Element by class chain', async() => {
+        // select the Alert Views class chain Id
+        const alertText3 = '**/XCUIElementTypeStaticText[`label =="Alert Views"`]';
+        // const alertText3 = '**/XCUIElementTypeStaticText[`label CONTAINS "Alert"`]';
+        // select the Alert Views option by usig class chain constructor
+        const alertViewsOption3 = await $(`-ios class chain:${alertText3}`);
+        // click on the element
+        await alertViewsOption3.click();
+        // select the Simple option by using label
+        const simpleOption2 = await $('//XCUIElementTypeStaticText[@label="Simple"]');
+        // click on the element
+        await simpleOption2.click();
+        // assertion
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best");
+
+    });
+    // Find Element by predicate string
+    it('Find Element by predicate string', async() => {
+        // select the Alert Views predicate string
+        const alertText4 = 'label =="Alert Views"';
+        // const alertText4 = 'value BEGINSWITH[c] "Alert"'
+        // select the Alert Views option by usig predicate string constructor
+        const alertViewsOption4 = await $(`-ios predicate string:${alertText4}`);
+        // click on the element
+        await alertViewsOption4.click();
+        // select the Simple option by using label
+        const simpleOption3 = await $('//XCUIElementTypeStaticText[@label="Simple"]');
+        // click on the element
+        await simpleOption3.click();
+        // assertion
+        await expect(await driver.getAlertText()).toContain("A Short Title Is Best");
+
+    });
+    // Search Input Field
+    it('Search Input Field', async() => {
+        // select the search input field by using accessibility id
+        const searchInput = await $('~Search');
+        // click on the element
+        await searchInput.click();
+        // select the Default option by using accessibility id
+        const defaultOption = await $('~Default');
+        // click on the element
+        await defaultOption.click();
+        // select the seach input field by using xpath
+        const searchInput1 = await $('//XCUIElementTypeSearchField');
+        // add text to the search input field
+        await searchInput1.addValue("I love this Appium Course!");
+        // assertion
+        await expect(searchInput1).toHaveAttr("Value");
+        // select the clear button by using accessibility id
+        const clearButton = await $('~Clear text');
+        // click on the element
+        await clearButton.click();
+        // assertion
+        await expect(searchInput1).not.toHaveAttr("Value");
+    });
+
 
 });
