@@ -5,7 +5,7 @@ describe('Todo List', () => {
         const createList = await $('//*[@name="Create list"]');
         // click on the element
         await createList.click();
-        // select the create list option by using value
+        // select the enter list name option by using value
         const enterlistName = await $('//*[@value="List Name"]');
         // Add Value
         await enterlistName.addValue("Things to do");
