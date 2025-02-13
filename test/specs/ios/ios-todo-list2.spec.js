@@ -93,6 +93,6 @@ describe('Todo List', () => {
         const createdDueDate = await todoListPage.createdDueDate;
         // assertion 2
         await expect(createdDueDate).toBeExisting();
-        await 
+        
     });
 });
