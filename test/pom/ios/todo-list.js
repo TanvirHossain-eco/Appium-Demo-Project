@@ -54,4 +54,6 @@ class TodoListPage{
 
 }
 
-module.exports = new TodoListPage();
+// module.exports = new TodoListPage(); // CommonJS Module
+
+export default new TodoListPage();

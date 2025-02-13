@@ -1,4 +1,7 @@
-const todoListPage = require('../../pom/ios/todo-list');
+import {$, $$, expect, browser} from "@wdio/globals"; // Must add this line
+// const todoListPage = require('../../pom/ios/todo-list').default; // CommonJS Module - Add when POM is created
+import todoListPage from '../../pom/ios/todo-list'; // ES6 Module - Add when POM is created
+ 
 describe('Todo List', () => {
     // Create Todo List
     it('Create a Todo List', async() => {
@@ -26,7 +29,6 @@ describe('Todo List', () => {
         const createdList = await todoListPage.createdList;
         // assertion
         await expect(createdList).toBeExisting();
-        
     });
     // Create Todo Item
     it('Create a Todo Item', async() => {
@@ -91,5 +93,6 @@ describe('Todo List', () => {
         const createdDueDate = await todoListPage.createdDueDate;
         // assertion 2
         await expect(createdDueDate).toBeExisting();
+        await 
     });
 });
