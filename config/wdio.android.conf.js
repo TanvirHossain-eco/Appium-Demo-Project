@@ -4,7 +4,7 @@ const {config} = require ('./wdio.shared.conf');
 // ====================
 // Add port here
 // ====================
-config.port = 4723; // Change it when you will run on BrowserStack
+config.port = 4724; // Change it when you will run on BrowserStack
 
 // ====================
 // Add spec files here
