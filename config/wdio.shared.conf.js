@@ -7,7 +7,7 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    port: 4724,
+    // port: 4724,
     //
     // ==================
     // Specify Test Files
@@ -23,14 +23,14 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        // ToDo: define location for spec files here
-        // './test/specs/**/*.js',
-        // './test/specs/*.js',
-        // './test/specs/android/*.js',
-        './test/specs/ios/*.js',
-        // './test/specs/ios*.js',
-    ],
+    // specs: [
+    //     // ToDo: define location for spec files here
+    //     // './test/specs/**/*.js',
+    //     // './test/specs/*.js',
+    //     // './test/specs/android/*.js',
+    //     './test/specs/ios/*.js',
+    //     // './test/specs/ios*.js',
+    // ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -66,7 +66,7 @@ exports.config = {
     //     'appium:automationName': 'UiAutomator2'
     // }],
 
-    capabilities: [
+    // capabilities: [
     //     {
     //     // capabilities for local Appium web tests on an Android Emulator
     //     'appium:platformName': 'Android',
@@ -100,18 +100,18 @@ exports.config = {
     //     // "appium:autoGrantPermissions": true
     // },
 
-    {
-        // capabilities for local Appium App tests on an iOS Emulator
-        platformName: 'iOS',
-        'appium:platformVersion': '15.5',
-        'appium:deviceName': 'iPhone 11 Pro',
-        'appium:automationName': 'XCUITest',
-        "appium:app": path.join(process.cwd(), "app/ios/MVCTodo.app"),
-        "appium:noReset": true,
-        "appium:fullReset": false,
-        // "appium:autoGrantPermissions": true
-    }
-],
+//     {
+//         // capabilities for local Appium App tests on an iOS Emulator
+//         platformName: 'iOS',
+//         'appium:platformVersion': '15.5',
+//         'appium:deviceName': 'iPhone 11 Pro',
+//         'appium:automationName': 'XCUITest',
+//         "appium:app": path.join(process.cwd(), "app/ios/MVCTodo.app"),
+//         "appium:noReset": true,
+//         "appium:fullReset": false,
+//         // "appium:autoGrantPermissions": true
+//     }
+// ],
 
     //
     // ===================

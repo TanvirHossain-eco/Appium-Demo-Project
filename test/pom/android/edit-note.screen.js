@@ -1,5 +1,5 @@
 // import the page object model
-const noteAppPage = require('../ios/note-app-page');
+const noteAppPage = require('./note-app-page');
 // create a class
 class EditNoteScreen{
     // select add note button by using + button
