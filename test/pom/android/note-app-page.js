@@ -4,14 +4,14 @@ class NoteAppPage {
     get skipButton() {
         return $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]');
     }
-    // // select the add note button by using text
-    // get addNote(){
-    //     return $('//*[@text="Add note"]');
-    // }
-    // // select add note button by using + button
-    // get plusNote(){
-    //     return $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/main_btn1"]');
-    // }
+    // select the add note button by using text
+    get addNote(){
+        return $('//*[@text="Add note"]');
+    }
+    // select add note button by using + button
+    get plusNote(){
+        return $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/main_btn1"]');
+    }
     // select the text option by using text
     get textOption(){
         return $('//*[@text="Text"]');
