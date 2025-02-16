@@ -10,9 +10,10 @@ config.port = 4724; // Change it when you will run on BrowserStack
 // Add spec files here
 // ====================
 config.specs = [
-    '../test/specs/android/note-app.spec.js'
-    // './test/specs/android/note-app-1.spec.js',
-    // './test/specs/android/note-app-3.spec.js',  
+    // '../test/specs/android/note-app.spec.js',
+    // '../test/specs/android/note-app-1.spec.js',
+    // '../test/specs/android/note-app-3.spec.js',
+    '../test/specs/android/note-app-hooks.spec.js',  
 ];
 // =====================
 // Add capabilities here
