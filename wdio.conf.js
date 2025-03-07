@@ -28,7 +28,8 @@ exports.config = {
         // './test/specs/**/*.js',
         // './test/specs/*.js',
         // './test/specs/android/*.js',
-        './test/specs/android/note-app.spec.js',
+        // './test/specs/android/note-app.spec.js',
+        './test/specs/android/note-app-hooks.spec.js',
     ],
     // Patterns to exclude.
     exclude: [

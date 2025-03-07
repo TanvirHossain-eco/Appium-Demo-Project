@@ -2,9 +2,11 @@
 const noteAppPage = require('../../pom/android/note-app-page');
 
 // describe & it for the test
-describe('Add Notes', () => {    
-    // Skip the Tutorial
-    it('Skip the Tutorial', async() => {
+describe('Add Notes', () => {
+    // before test, skip the tutorial
+    before(async() => {
+        // Print out it is Before Hooks test
+        console.log("Before Hooks");
         // access the tutorial screen by using resource id
         // const skipTutorial = await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]');
         // access the tutorial screen by using resource id from the pom
@@ -17,6 +19,35 @@ describe('Add Notes', () => {
         const textNote1 = await noteAppPage.addNote;
         await expect(textNote1).toBeDisplayed();
     });
+    // before each test
+    beforeEach(async() => {
+        // Print out it is Before Each Hooks test
+        console.log("Before Each Hooks");
+    });
+    // after test
+    after(async() => {
+        // Print out it is After Hooks test
+        console.log("After Hooks");
+    });
+    // after each test
+    afterEach(async() => {
+        // Print out it is After Each Hooks test
+        console.log("After Each Hooks");
+    });
+    // // Skip the Tutorial
+    // it('Skip the Tutorial', async() => {
+    //     // access the tutorial screen by using resource id
+    //     // const skipTutorial = await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]');
+    //     // access the tutorial screen by using resource id from the pom
+    //     const skipTutorial = await noteAppPage.skipButton;
+    //     // click on the element
+    //     await skipTutorial.click();
+    //     // assertion by using text
+    //     // const textNote1 = await $('//*[@text="Add note"]');
+    //     // assertion by using text from the pom
+    //     const textNote1 = await noteAppPage.addNote;
+    //     await expect(textNote1).toBeDisplayed();
+    // });
     // Add Single Note
     it('Adding Single Note', async() => {
         // select the add note button by using text
