@@ -1,10 +1,10 @@
 const path = require ('path');
 const {config} = require ('./wdio.shared.conf');
 
-// ====================
-// Add port here
-// ====================
-config.port = 4724; // Change it when you will run on BrowserStack
+
+// Adding User & Key for BrowserStack
+config.user = 'tanvirhossain_1shukE';
+config.key = '5RYXipXpzYxGxzaUEthg';
 
 // ====================
 // Add spec files here
@@ -28,23 +28,34 @@ config.capabilities = [
     //     "appium:app": path.join(process.cwd(), "app/android/ApiDemos-debug.apk"),
     //     "appium:autoGrantPermissions": true
     // },
+    // {
+    //     // capabilities for local Appium web tests on an Android Emulator
+    //     'appium:platformName': 'android',
+    //     'appium:platformVersion': '11.0',
+    //     'appium:deviceName': 'Google Pixel 4',
+    //     'appium:automationName': 'UIAutomator2',
+    //     "appium:app": "bs://b72304723e291312ed28addf7cad2f0bc0e844ce",
+    //     "appium:autoGrantPermissions": true
+    // },
     {
-        // capabilities for local Appium web tests on an Android Emulator
-        'appium:platformName': 'Android',
-        'appium:platformVersion': '15.0',
-        'appium:deviceName': 'Pixel 4',
-        'appium:automationName': 'UIAutomator2',
-        "appium:app": path.join(process.cwd(), "app/android/ColorNote+Notepad.apk"),
-        "appium:autoGrantPermissions": true
+        // capabilities for BrowserStack on an Android Emulator
+        'platformName': 'android',
+        'platformVersion': '15.0',
+        'deviceName': 'Google Pixel 9',
+        'automationName': 'UIAutomator2',
+        "app": "bs://b72304723e291312ed28addf7cad2f0bc0e844ce",
+        "autoGrantPermissions": true
     },
 
     
+    
 ]
 
-// Test runner services
+// Configuration for Android on BrowserStack - Same as for iOS as well.
+    // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    config.services= ['appium'],
+    config.services= ['browserstack'],
 
 exports.config = config;
