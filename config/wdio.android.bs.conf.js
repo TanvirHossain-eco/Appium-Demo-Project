@@ -40,8 +40,8 @@ config.capabilities = [
     {
         // capabilities for BrowserStack on an Android Emulator
         'platformName': 'android',
-        'platformVersion': '15.0',
-        'deviceName': 'Google Pixel 9',
+        'platformVersion': '11.0',
+        'deviceName': 'Google Pixel 4',
         'automationName': 'UIAutomator2',
         "app": "bs://b72304723e291312ed28addf7cad2f0bc0e844ce",
         "autoGrantPermissions": true

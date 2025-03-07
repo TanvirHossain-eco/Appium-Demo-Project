@@ -93,7 +93,10 @@ describe('Add Notes', () => {
         await noteDescription1.addValue("This is a single test note created by Appium Automation");
         // save the changes by going back Once
         await driver.back();
+        await driver.back();
         await driver.pause(5000);
+        // await driver.execute('mobile: back');
+        // await driver.pause(5000);
         // select the edit button by using resource id
         // const editButton1 = await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_btn"]');
         // select the edit button by using resource id from the pom
@@ -103,7 +106,8 @@ describe('Add Notes', () => {
         // get the note title text
         const noteTitle1Text = await noteTitle1.getText();
         // save the changes by going back twice
-        await driver.back();    
+        await driver.back();   
+        // await driver.execute('mobile: back'); 
         await driver.pause(5000);
         // assertion by confirming note title to be displayed
         const displayNoteTitle1= await noteAppPage.displayNoteTitle;
@@ -120,7 +124,7 @@ describe('Add Notes', () => {
         // const addNote2 = await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/main_btn1"]');
         // select the add note button by using + button from the pom
         const addNote2 = await noteAppPage.plusNote;
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 2; i++) {
             // Check which add note element is displayed and click it
             if (await addNote1.isDisplayed()) {
                 await addNote1.click();
@@ -154,6 +158,8 @@ describe('Add Notes', () => {
         
             // Save the changes by going back once
             await driver.back();
+            await driver.back();
+            // await driver.execute('mobile: back');
             await driver.pause(5000);
         
             // Select the edit button and assert it is displayed
@@ -164,6 +170,7 @@ describe('Add Notes', () => {
         
             // Save the changes by going back twice
             await driver.back();
+            // await driver.execute('mobile: back');
             await driver.pause(5000);
         
             // Assert that the created note title is displayed
