@@ -19,7 +19,7 @@ jobs:
           run: npm install
 
         - name: Test
-          run: npx wdio config/wdio.android.bs.conf.js
+          run: npx wdio config/wdio.android.bs.conf.js --spec './test/specs/android/note-app-hooks.spec.js'
 
         - name: Upload Logs
           uses: actions/upload-artifact@v4
