@@ -1,5 +1,8 @@
 name: CI
 on: [push, pull_request]
+env:
+    BROWSERSTACK_USER: ${{ secrets.BS_USER }}
+    BROWSERSTACK_KEY: ${{ secrets.BS_KEY }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,10 +19,7 @@ jobs:
           run: npm install
 
         - name: Test
-          env:
-            BROWSERSTACK_USER: ${{ secrets.BS_USER }}
-            BROWSERSTACK_KEY: ${{ secrets.BS_KEY }}
-          run: npx wdio config/wdio.android.bs.conf.js --spec test/specs/android/note-app-hooks.spec.js
+          run: npx wdio config/wdio.android.bs.conf.js
 
         - name: Upload Logs
           uses: actions/upload-artifact@v4
