@@ -1,10 +1,16 @@
+require('dotenv').config()
 const path = require ('path');
 const {config} = require ('./wdio.shared.conf');
 
 
 // Adding User & Key for BrowserStack
-config.user = 'tanvirhossain_1shukE';
-config.key = '5RYXipXpzYxGxzaUEthg';
+config.user = process.env.BROWSERSTACK_USER;
+config.key = process.env.BROWSERSTACK_KEY;
+// config.user = 'tanvirhossain_1shukE';
+// config.key = '5RYXipXpzYxGxzaUEthg';
+// check npm list @wdio/browserstack-service
+// if not found then uninstall this service -> npm uninstall @wdio/browserstack-service
+// reinstall this service -> npm install --save-dev @wdio/browserstack-service
 
 // ====================
 // Add spec files here
