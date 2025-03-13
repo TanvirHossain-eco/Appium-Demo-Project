@@ -18,7 +18,7 @@ describe('Web Browser Access', () => {
         const textNote1 = await noteAppPage.addNote;
         await expect(textNote1).toBeDisplayed();
     });
-
+    // Native App to Webview Chrome
     it('Access external link and verify content in the browser', async() => {
         // select the nav icon by using resource id
         const navIcon = await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/icon_nav"]');
@@ -31,7 +31,7 @@ describe('Web Browser Access', () => {
         // pause for 2 seconds
         // await browser.pause(2000);
         // pause for 2 seconds
-        await driver.pause(2000);
+        await browser.pause(2000);
         // select the close button by using class
         // const closeButton = await $('~android.app.Dialog');
         const closeButton = await $('//*[@text="Close"]');
@@ -51,10 +51,44 @@ describe('Web Browser Access', () => {
         // // verify current url contains facebook
         // await expect(currentUrl).toContain("facebook.com/ColorNote/");
         let contexts = await driver.getContexts();
-        console.log(contexts);
+        console.log("All Contexts are:" + contexts);
         await driver.pause(2000)
-        const currentContext = await driver.switchContext(contexts[1]);
-        console.log(currentContext);
+        const currentContext = await driver.getContext();
+        console.log("Current Context: " + currentContext)
+        await driver.switchContext("WEBVIEW_chrome");
+        const switchedContext = await driver.getContext();
+        console.log("Switch Context: " + switchedContext);
+        // assertion
+        // get the url of the current page
+        const currentUrl = await browser.getUrl();        
+        // verify current url contains facebook
+        await expect(currentUrl).toContain("facebook.com/ColorNote/");
+        // // assertion-2
+        // const coverImg = await $('.img.coverPhoto');
+        // await expect(coverImg).toBeDisplayed();
+    });
+    // Webview Chrome to Native App
+    it('Return to Native App', async() => {
+        // switch back to Native App
+        await driver.switchContext("NATIVE_APP");
+        // pause for 2 seconds
+        // await driver.pause(2000);
+        // printout the current context
+        const switchedContext = await driver.getContext();
+        console.log("Switch Context: " + switchedContext);
+        // return to my application
+        await driver.back();
+        await driver.back();
+        // pause for 2 seconds
+        await driver.pause(2000);
+        // get the notes button by using text
+        const notes = await $('//*[@text="Notes"]');
+        // click on the element
+        await notes.click();
+        // assertion
+        const textNote1 = await noteAppPage.addNote;
+        await expect(textNote1).toBeDisplayed();
 
     });
+
 });

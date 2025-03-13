@@ -1,0 +1,3 @@
+{
+  "text": "This is a test note 1 created by Appium Automation"
+}

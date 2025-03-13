@@ -93,7 +93,7 @@ describe('Add Notes', () => {
         await noteDescription1.addValue("This is a single test note created by Appium Automation");
         // save the changes by going back Once
         await driver.back();
-        await driver.back();
+        await driver.back(); // For BS Only
         await driver.pause(5000);
         // await driver.execute('mobile: back');
         // await driver.pause(5000);
@@ -158,7 +158,7 @@ describe('Add Notes', () => {
         
             // Save the changes by going back once
             await driver.back();
-            await driver.back();
+            await driver.back(); // For BS Only
             // await driver.execute('mobile: back');
             await driver.pause(5000);
         
